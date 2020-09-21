@@ -24,7 +24,7 @@ bool HasBalancedParentheses(string input)  {
   
   int count = 0;
   for (int y = 0; y < input.length[]; y++)  {
-    if (input[0] == ')'')
+    if (input[0] == ')')
       return false;
     if (input[i] == '(') 
       count++;
