@@ -23,7 +23,7 @@ void ReverseArray(int arr[], int length)  {
 bool HasBalancedParentheses(string input)  {
   
   int count = 0;
-  for (int y = 0; i < input.length; y++)  {
+  for (int y = 0; y < input.length; y++)  {
     if (input[0] == ")")
       return false;
     if (input[i] == '(') 
