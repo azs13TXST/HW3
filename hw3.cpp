@@ -38,7 +38,7 @@ bool HasBalancedParentheses(string input)  {
       return true;
     }
     return false;
-  }
+  
 }
 
 bool InXish(string input, string x)  {
@@ -52,7 +52,7 @@ bool InXish(string input, string x)  {
   if (input.at(0) == x.at(0))
     return InXish(input.substr(1), x.substr(1));
   return InXish(input.substr(1), x.substr(0));
-    }
+  
   /*if(input == x)  {
         return true;
   }
