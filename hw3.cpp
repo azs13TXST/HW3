@@ -1,6 +1,27 @@
-/****
-* PSEUDOCODE:
-*
+/*
+PSEUDOCODE:
+ReverseArray function
+  Initializes int "n"
+  For loop to cycle through teh array
+    Sets temp to the current position
+    Switches the first and last positions
+    Moves through the array and continues switching
+
+HasBalancedParentheses function
+  Iniializes the int "count"
+  For loop to cycle through the string
+    Checks if the string starts unbalanced
+    Changes the value of count depending on
+      Which parentheses is present
+    Returns true only if count = 0
+
+InXish function
+  Returns false if the array is empty
+  Searches for the given word in the string
+  Returns the InXish function if the substrates match
+
+InDogish function
+  Returns the InXish function with dog as the input
 */
 
 #include <iostream>
@@ -11,8 +32,8 @@ using namespace std;
 
 void ReverseArray(int arr[], int length)  {
   int n = length - 1;
+  //Reverses the array order
   for (int x = 0; x < (n); x++)  {
-    
     int temp = arr[x];
     arr[x] = arr[n];
     arr[n] = temp;
@@ -23,13 +44,17 @@ void ReverseArray(int arr[], int length)  {
 bool HasBalancedParentheses(string input)  {
   
   int count = 0;
+  //Loop to keep tabs on each parentheses
   for (int y = 0; y < input.length(); y++)  {
     if (input[0] == ')')
       return false;
+    
     if (input[y] == '(') 
       count++;
+    
     if (input[y] == ')') 
       count--;
+    
     if (count < 0) {
       return false;
     }
@@ -42,56 +67,21 @@ bool HasBalancedParentheses(string input)  {
 }
 
 bool InXish(string input, string x)  {
-  if(input == "") {
+  if(input == "")
     return false;
-  }
+  
   if (x.length() == 0)
     return true;
+  
   if (input.length() == 0)
     return false;
+  
   if (input.at(0) == x.at(0))
     return InXish(input.substr(1), x.substr(1));
-  return InXish(input.substr(1), x.substr(0));
-  
-  /*if(input == x)  {
-        return true;
-  }
-  std::cout << word << std::endl;
 
-  if(word[0] == x) {
-     ///COMPLETE THIS TO HELP WITH RECURSION SETUP 
-    
-  } 
-    else {
-  return InXish(word.substr(1,word.length()), x);
-    }*/
+  return InXish(input.substr(1), x.substr(0));
 }
 
 bool InDogish(string input)  {
   return InXish(input, "dog");
-  
-  /*if(word == "") {
-    return false;
-  }
-    std::cout << word << std::endl;
-  if(word[0] == letter) {
-     ///COMPLETE THIS TO HELP WITH RECURSION SETUP 
- 
-    } 
-  else {
-  return InDogish(word.substr(1,word.length()), letter);
-  }*/
 }
-
-/*bool DogishHelper( std::string word, char letter){
- if(word == "") {
- return false;
-    }
-    std::cout << word << std::endl;
-  if(word[0] == letter) {
-     ///COMPLETE THIS TO HELP WITH RECURSION SETUP 
- 
-  } else {
- return DogishHelper(word.substr(1,word.length()), letter);
-    }
-}*/
