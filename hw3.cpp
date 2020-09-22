@@ -10,9 +10,9 @@
 using namespace std;
 
 void ReverseArray(int arr[], int length)  {
-  
-  for (int x = 0; x < (length/2); x++)  {
-    int n = length - 1;
+  int n = length - 1;
+  for (int x = 0; x < (n); x++)  {
+    
     int temp = arr[x];
     arr[x] = arr[n];
     arr[n] = temp;
